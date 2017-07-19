@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	seeker "github.com/DenisCheremisov/gotailer/seekers"
+	seeker "github.com/glossina/gotailer/seekers"
 )
 
 // PollingMonitor is a file monitor implementation based on file pooling

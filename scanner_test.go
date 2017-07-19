@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	seeker "github.com/DenisCheremisov/gotailer/seekers"
+	seeker "github.com/glossina/gotailer/seekers"
 	"github.com/stretchr/testify/assert"
 )
 

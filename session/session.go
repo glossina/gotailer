@@ -1,6 +1,6 @@
 package session
 
-import seeker "github.com/DenisCheremisov/gotailer/seekers"
+import seeker "github.com/glossina/gotailer/seekers"
 
 // TailerSession is a tailer position saver.
 type TailerSession interface {
