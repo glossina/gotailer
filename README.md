@@ -8,7 +8,7 @@ which is aimed for dealing with small amount of frequently updated files.
 
 Get it
 ```bash
-go get github.com/DenisCheremisov/gotailer
+go get github.com/glossina/gotailer
 ```
 and use as shown in
 
@@ -20,8 +20,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/DenisCheremisov/gotailer"
-	seeker "github.com/DenisCheremisov/gotailer/seekers"
+	"github.com/glossina/gotailer"
+	seeker "github.com/glossina/gotailer/seekers"
 )
 
 const fileName = "/tmp/file_to_watch"
