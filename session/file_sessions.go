@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strconv"
 
-	seeker "github.com/glossina/gotailer/seekers"
+	seeker "github.com/sirkon/gotailer/seekers"
 )
 
 // FileSession keeps tailer session information in files

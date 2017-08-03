@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	seeker "github.com/glossina/gotailer/seekers"
+	seeker "github.com/sirkon/gotailer/seekers"
 )
 
 func TestPooler(t *testing.T) {
