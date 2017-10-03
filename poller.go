@@ -3,24 +3,22 @@ package gotailer
 import (
 	"fmt"
 	"os"
-
-	seeker "github.com/sirkon/gotailer/seekers"
 )
 
 // PollingMonitor is a file monitor implementation based on file pooling
 type PollingMonitor struct {
 	name         string
 	file         *os.File
-	seeker       seeker.Seeker
+	seeker       Seeker
 	prevPos      int64
-	reopenSeeker seeker.Seeker
+	reopenSeeker Seeker
 }
 
 // NewPollingMonitor creats new pooling file monitor
 // name - file name to monitor
 // seeker - function to seek over a file
 // reopenSeeker - seek on reopen
-func NewPollingMonitor(name string, seeker seeker.Seeker, reopenSeeker seeker.Seeker) (*PollingMonitor, error) {
+func NewPollingMonitor(name string, seeker Seeker, reopenSeeker Seeker) (*PollingMonitor, error) {
 	file, err := os.Open(name)
 	if err != nil {
 		return nil, err

@@ -1,6 +1,9 @@
-package seeker
+package gotailer
 
-import "os"
+import (
+	"io"
+	"os"
+)
 
 // Seeker suppose to seek in a file
 type Seeker interface {
@@ -8,15 +11,15 @@ type Seeker interface {
 }
 
 // SeekToEnd moves file cursor to the end
-var SeekToEnd = newPositional(func(file *os.File) (int64, error) { return file.Seek(0, os.SEEK_END) })
+var SeekToEnd = newPositional(func(file *os.File) (int64, error) { return file.Seek(0, io.SeekStart) })
 
 // SeekToStart moves file cursor the the start
-var SeekToStart = newPositional(func(file *os.File) (int64, error) { return file.Seek(0, os.SEEK_SET) })
+var SeekToStart = newPositional(func(file *os.File) (int64, error) { return file.Seek(0, io.SeekStart) })
 
 // SeekTo moves file cursor to certain position
 func SeekTo(pos int64) Seeker {
 	return newPositional(func(file *os.File) (int64, error) {
-		return file.Seek(pos, os.SEEK_SET)
+		return file.Seek(pos, io.SeekStart)
 	})
 }
 

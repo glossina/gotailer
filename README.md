@@ -21,14 +21,13 @@ import (
 	"time"
 
 	"github.com/sirkon/gotailer"
-	seeker "github.com/sirkon/gotailer/seekers"
 )
 
 const fileName = "/tmp/file_to_watch"
 
 func main() {
 	// Setting up watcher object
-	watcher, err := gotailer.NewPollingMonitor(fileName, seeker.SeekToEnd, seeker.SeekToEnd)
+	watcher, err := gotailer.NewPollingMonitor(fileName, SeekToEnd, SeekToEnd)
 	if err != nil {
 		log.Fatalf("Unrecoverable error: %s", err)
 	}

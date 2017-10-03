@@ -7,7 +7,6 @@ import (
 	"os"
 	"testing"
 
-	seeker "github.com/sirkon/gotailer/seekers"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -137,7 +136,7 @@ func TestScannerWatcherCombined(t *testing.T) {
 	}()
 
 	fname := tmpfile.Name()
-	watcher, err := NewPollingMonitor(fname, seeker.SeekToEnd, seeker.SeekToStart)
+	watcher, err := NewPollingMonitor(fname, SeekToEnd, SeekToStart)
 	if err != nil {
 		t.Fatal(err)
 	}

@@ -1,4 +1,4 @@
-package seeker
+package gotailer
 
 import "os"
 

@@ -4,8 +4,6 @@ import (
 	"io/ioutil"
 	"os"
 	"testing"
-
-	seeker "github.com/sirkon/gotailer/seekers"
 )
 
 func TestPooler(t *testing.T) {
@@ -21,7 +19,7 @@ func TestPooler(t *testing.T) {
 	}()
 
 	fname := tmpfile.Name()
-	monitor, err := NewPollingMonitor(fname, seeker.SeekToEnd, seeker.SeekToEnd)
+	monitor, err := NewPollingMonitor(fname, SeekToEnd, SeekToEnd)
 	if err != nil {
 		t.Fatal(err)
 	}

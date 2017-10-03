@@ -1,4 +1,4 @@
-package session
+package gotailer
 
 import (
 	"fmt"
@@ -6,8 +6,6 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
-
-	seeker "github.com/sirkon/gotailer/seekers"
 )
 
 // FileSession keeps tailer session information in files
@@ -28,10 +26,10 @@ func (fs *FileSession) SavePosition(id string, pos int64) (err error) {
 }
 
 // RestorePosition ...
-func (fs *FileSession) RestorePosition(id string) (res seeker.Seeker, err error) {
+func (fs *FileSession) RestorePosition(id string) (res Seeker, err error) {
 	posData, err := ioutil.ReadFile(filepath.Join(fs.root, id))
 	if os.IsNotExist(err) {
-		res = seeker.SeekToStart
+		res = SeekToStart
 		return
 	}
 	if err != nil {
@@ -41,6 +39,6 @@ func (fs *FileSession) RestorePosition(id string) (res seeker.Seeker, err error)
 	if err != nil {
 		return
 	}
-	res = seeker.SeekTo(pos)
+	res = SeekTo(pos)
 	return
 }
